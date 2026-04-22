@@ -1,0 +1,231 @@
+/* Primary sans system */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap");
+@import "tailwindcss";
+
+/* Design Tokens */
+:root {
+  /* semantic */
+  --color-primary: #121212;
+  --color-accent: #7a2e2e; /* wine-inspired accent */
+  --color-accent-soft: #f7eceb;
+  --color-accent-border: #d7b2ae;
+
+  /* surface */
+  --color-bg: #fcfbfa;
+  --color-panel: #ffffff;
+  --color-muted: #f5f2f1;
+  --color-border: #ddd6d4;
+
+  /* text */
+  --color-fg: #171717;
+  --color-fg-muted: #655b58;
+
+  /* states */
+  --color-success: #2e6a49;
+  --color-danger: #8b1d2c;
+
+  /* typography */
+  --font-sans: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  --font-display: var(--font-sans);
+
+  /* radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* spacing (augment Tailwind) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  --shadow-soft: 0 1px 2px rgb(18 18 18 / 0.05), 0 8px 20px rgb(18 18 18 / 0.06);
+  --shadow-pop: 0 1px 2px rgb(18 18 18 / 0.06), 0 14px 30px rgb(18 18 18 / 0.1);
+}
+
+/* Expose tokens to Tailwind via @theme (TW v4) */
+@theme {
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-fg);
+  --color-muted: var(--color-muted);
+  --color-panel: var(--color-panel);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-border: var(--color-accent-border);
+  --color-success: var(--color-success);
+  --color-danger: var(--color-danger);
+
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+/* Base resets aligned with tokens */
+@layer base {
+  html, body, #root { height: 100%; }
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 25%, transparent);
+    color: var(--color-fg);
+  }
+  a { color: inherit; }
+}
+
+/* Utilities */
+@layer utilities {
+  .flex-center { @apply flex items-center justify-center; }
+  .container-max { @apply max-w-7xl mx-auto px-4 sm:px-6; }
+  .divider { height: 2px; background: var(--color-border); width: 100%; }
+  .tap-target { @apply min-h-11 min-w-11; }
+
+  /* Typography scale (use these exclusively) */
+  .text-heading {
+    @apply text-[44px] sm:text-[58px] font-semibold leading-[1.03];
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+  .text-heading-page {
+    @apply text-[30px] sm:text-[48px] font-semibold leading-[1.04];
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+  .text-title { @apply text-[28px] sm:text-[34px] font-semibold leading-tight; }
+  .text-large { @apply text-[19px] leading-snug; }
+  .text-body { @apply text-[15px] leading-snug; }
+  .text-label { @apply text-[11px] uppercase tracking-[0.18em] font-semibold; }
+  .text-muted { color: var(--color-fg-muted); }
+  .text-fg-muted { color: var(--color-fg-muted); }
+  .text-textPrimary { color: var(--color-fg); }
+  .text-textSecondary { color: var(--color-fg-muted); }
+  .font-merriweather { font-family: var(--font-sans); }
+
+  /* Compact line-height utility */
+  .text-compact { line-height: 1.35; }
+
+  .btn {
+    @apply inline-flex items-center gap-2 uppercase tracking-wide text-[12px] font-semibold transition-all duration-150 border focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    border-color: var(--color-border);
+    border-width: 2px;
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.9rem;
+    background: transparent;
+    color: var(--color-fg);
+  }
+  .btn-primary {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-soft);
+  }
+  .btn-primary:hover {
+    filter: saturate(115%) brightness(1.02);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-pop);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-fg);
+    border-color: var(--color-border);
+  }
+  .btn-secondary:hover { background: var(--color-muted); }
+  .btn-ghost:hover { background: var(--color-muted); }
+  .kbd { @apply px-2 py-[2px] border rounded-sm text-[11px] uppercase tracking-wider; border-color: var(--color-border); color: var(--color-fg-muted); }
+  .btn-minimal {
+    @apply inline-flex items-center justify-center rounded-[var(--radius-sm)] p-2 transition-colors;
+    color: var(--color-fg-muted);
+  }
+  .btn-minimal:hover {
+    background: var(--color-muted);
+    color: var(--color-fg);
+  }
+  .input-field {
+    @apply w-full h-10 px-3 rounded-[var(--radius-sm)] border bg-[color:var(--color-panel)] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    border-color: var(--color-border);
+    color: var(--color-fg);
+  }
+  .input-field::placeholder {
+    color: var(--color-fg-muted);
+  }
+  .input-field:focus-visible {
+    box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-accent) 25%, transparent);
+  }
+  .notice-error {
+    border: 1px solid color-mix(in oklab, var(--color-danger) 35%, transparent);
+    background: color-mix(in oklab, var(--color-danger) 10%, white);
+    color: var(--color-danger);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.75rem;
+  }
+  .notice-success {
+    border: 1px solid var(--color-accent-border);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Tokens as utilities to avoid inline styles */
+  .bg-token { background: var(--color-bg); }
+  .bg-panel-token { background: var(--color-panel); }
+  .panel-token { background: var(--color-panel); }
+  .muted-token { background: var(--color-muted); }
+  .border-token { border-color: var(--color-border); }
+  .text-token { color: var(--color-fg); }
+  .ring-accent { box-shadow: inset 0 0 0 1px var(--color-accent-border); }
+  .surface-elevated {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+  }
+  .surface-pop {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-pop);
+  }
+  .accent-strip {
+    background: linear-gradient(90deg, var(--color-accent) 0%, color-mix(in oklab, var(--color-accent) 70%, white) 70%);
+  }
+
+  /* Focus ring uses neutral gray in monochrome */
+  .focus-accent { @apply focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-[color:var(--color-bg)]; }
+}
+
+@layer base {
+  /* Default paragraph size tightened */
+  p { @apply text-[15px] leading-snug; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5
+           border-2 border-[color:var(--color-fg)]
+           bg-[color:var(--color-fg)] text-[color:var(--color-bg)]
+           font-semibold uppercase tracking-wider text-xs
+           transition-all duration-150 min-h-11 min-w-11;
+  }
+
+  .btn-primary > svg:first-child {
+    @apply w-4.5 h-4.5 -ml-1; /* slight left nudge for optical balance */
+  }
+
+  .btn-primary > svg:last-child {
+    @apply w-4 h-4 ml-2;
+  }
+}
