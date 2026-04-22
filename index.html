@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wine Graph | Connect & Discover</title>
+    <meta
+            name="description"
+            content="Wine Graph helps wine shops make real inventory easier to discover by syncing POS data, matching wines to a canonical graph, and exposing what is already on the shelf."
+    />
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="icon" href="logo/wine_graph_logo_64x64.png"/>
+</head>
+<body class="landing-body">
+<header class="site-header" aria-label="Wine Graph">
+    <a class="site-brand" href="/" aria-label="Wine Graph home">
+        <img
+                class="site-logo"
+                src="logo/wine_graph_logo_256x256.png"
+                srcset="logo/wine_graph_logo_128x128.png 128w, logo/wine_graph_logo_256x256.png 256w, logo/wine_graph_logo_512x512.png 512w"
+                sizes="40px"
+                width="40"
+                height="40"
+                alt="Wine Graph logo"
+        />
+        <span>Wine Graph</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+        <a href="#workflow">Workflow</a>
+        <a href="#audience">Who it's for</a>
+        <a href="overview.html">Overview</a>
+        <a class="nav-icon-link" href="https://instagram.com/wine_graph" target="_blank" rel="noopener noreferrer" aria-label="Wine Graph on Instagram">
+            <svg class="nav-icon nav-icon-instagram" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17" cy="7" r="1"></circle>
+            </svg>
+        </a>
+        <a class="nav-icon-link" href="mailto:paul@winegraph.io" aria-label="Email Wine Graph">
+            <svg class="nav-icon nav-icon-email" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+            </svg>
+        </a>
+    </nav>
+</header>
+
+<main>
+    <section class="landing-hero">
+        <div class="hero-copy">
+            <p class="eyebrow">Wine discoverability across retailers and producers</p>
+            <h1>Help wines show up when people search. Enable easy discovery and engagement.</h1>
+            <p class="hero-subcopy">
+                Wine Graph connects shop inventory and producer wine data into a shared graph, so real bottles on real
+                shelves become easier to find across producer, wine, and local availability searches.
+            </p>
+            <p class="hero-note">Currently, onboarding shops for inventory sync and matching.</p>
+            <p class="hero-note">Working with producers to make local wine inventory easier to discover.</p>
+
+            <div class="button-row" aria-label="Primary calls to action">
+                <div>
+                    <a class="landing-button landing-button-primary" href="https://calendar.app.google/sF1AWiCjU4J6MkWP6">
+                        Request a Demo
+                    </a>
+<!--                    <p class="hero-note">15–20 minutes • no setup • uses your existing POS data</p>-->
+                </div>
+                <a class="landing-button landing-button-secondary" href="overview.html">
+                    More info
+                </a>
+            </div>
+        </div>
+        <div class="hero-panel" aria-label="Inventory workflow preview">
+            <div class="inventory-frame">
+                <div class="inventory-row">
+                    <span>Inventory source</span>
+                    <strong>POS feed</strong>
+                </div>
+                <div class="inventory-row">
+                    <span>Producer wine records</span>
+                    <strong>Match queue</strong>
+                </div>
+                <div class="inventory-row">
+                    <span>Discovery layer</span>
+                    <strong>Availability</strong>
+                </div>
+            </div>
+            <p>Real inventory → producer verified → discoverable</p>
+            <p>Retailers bring real inventory. Producers bring canonical wine data. Wine Graph connects both.</p>
+        </div>
+    </section>
+
+    <section class="landing-section compact-section" aria-labelledby="does-title">
+        <div class="section-heading">
+            <p class="eyebrow">What it does</p>
+            <h2 id="does-title">Turns shop inventory into structured wine availability.</h2>
+        </div>
+        <div class="outcome-list">
+            <div class="outcome-item">
+                <span class="outcome-marker"></span>
+                <p>Sync inventory from POS systems like Square and Clover</p>
+            </div>
+            <div class="outcome-item">
+                <span class="outcome-marker"></span>
+                <p>Match wines to a shared canonical graph maintained by producers</p>
+            </div>
+            <div class="outcome-item">
+                <span class="outcome-marker"></span>
+                <p>Make both inventory and producer data easier to discover</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="landing-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading">
+            <p class="eyebrow">Product proof</p>
+            <h2 id="workflow-title">A simple path from POS data to searchable wine records.</h2>
+        </div>
+        <div class="workflow-grid">
+            <article class="workflow-card">
+                <div class="placeholder-screen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h3>Inventory sync</h3>
+                <p>Pull current bottles, SKUs, prices, and availability from the systems shops already use.</p>
+            </article>
+            <article class="workflow-card">
+                <div class="placeholder-screen match-screen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h3>Wine matching</h3>
+                <p>Resolve messy product names into cleaner canonical records for producers, wines, and vintages.</p>
+            </article>
+            <article class="workflow-card">
+                <div class="placeholder-screen discovery-screen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h3>Discovery</h3>
+                <p>Connect searches for specific wines to local retailers that actually have them available.</p>
+            </article>
+        </div>
+        <p class="workflow-caption">Real inventory → matched → discoverable</p>
+        <p class="workflow-caption">Search: “2021 Ridge Geyserville” → Shows retailers that actually have it</p>
+    </section>
+
+    <section class="landing-section" id="audience" aria-labelledby="audience-title">
+        <div class="section-heading">
+            <p class="eyebrow">Who it's for</p>
+            <h2 id="audience-title">Built for the people who care about accurate wine presence.</h2>
+        </div>
+        <div class="audience-grid">
+            <article class="audience-column">
+                <h3>Retailers</h3>
+                <p>
+                    Make the wines you already carry easier to find.
+                    <br><br>
+                    Wine Graph connects your POS inventory to a shared wine graph so your bottles show up when people
+                    search for them.
+                </p>
+            </article>
+            <article class="audience-column">
+                <h3>Producers</h3>
+                <p>
+                    Make your wines easier to find and understand.
+                    <br><br>
+                    Wine Graph connects your canonical wine data to real retailer inventory so buyers and drinkers can
+                    see where your wines are actually available.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="landing-cta" aria-labelledby="cta-title">
+        <div>
+            <p class="eyebrow">Demo</p>
+            <h2 id="cta-title">Interested in seeing how this works with your inventory or wines?</h2>
+<!--            <p class="hero-note">15–20 min, your inventory, no setup needed</p>-->
+<!--            <p class="hero-note">We’ll pull your inventory and show how it matches and becomes discoverable.</p>-->
+        </div>
+        <div class="button-row">
+            <div>
+                <a class="landing-button landing-button-primary" href="https://calendar.app.google/sF1AWiCjU4J6MkWP6">
+                    Schedule a Demo
+                </a>
+            </div>
+        </div>
+    </section>
+    <br>
+</main>
+</body>
+</html>

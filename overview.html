@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wine Graph</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="icon" href="logo/wine_graph_logo_64x64.png"/>
+</head>
+<body>
+<div class="page">
+    <article class="sheet">
+        <header class="brand-bar" aria-label="Wine Graph">
+            <img
+                    class="brand-logo"
+                    src="logo/wine_graph_logo_256x256.png"
+                    srcset="logo/wine_graph_logo_128x128.png 128w, logo/wine_graph_logo_256x256.png 256w, logo/wine_graph_logo_512x512.png 512w"
+                    sizes="64px"
+                    width="64"
+                    height="64"
+                    alt="Wine Graph logo"
+            />
+            <div class="brand-copy">
+                <p class="brand-name">Wine Graph</p>
+                <p class="brand-note"></p>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Core wine data shape</h2>
+            <div class="sub">
+                Clean and simple view of how area, producer, wine, and their references relate.
+            </div>
+
+            <div class="diagram-grid domain-grid">
+
+                <div class="card span-3 gold-top">
+                    <h3>Area (AVA, AOC, DOC, etc.)</h3>
+                    <p>A simple hierarchy for place and appellation context.</p>
+                    <ul>
+                        <li>name</li>
+                        <li>country / region / subregion</li>
+                        <li>producers / wines</li>
+                    </ul>
+                </div>
+
+                <div class="card span-3 accent-top">
+                    <h3>Producer</h3>
+                    <p>The source-of-truth owner for canonical wine identity.</p>
+                    <ul>
+                        <li>name</li>
+                        <li>story / profile</li>
+                        <li>tech sheets</li>
+                        <li>website / email / phone</li>
+                        <li>social media</li>
+                        <li>wines</li>
+                    </ul>
+                </div>
+
+                <div class="card span-3 accent-top">
+                    <h3>Wine</h3>
+                    <p>The canonical wine record used across the graph.</p>
+                    <ul>
+                        <li>name</li>
+                        <li>vintage</li>
+                        <li>varietal / grape</li>
+                        <li>harvest / bottling / release dates</li>
+                        <li>aging</li>
+                        <li>color / type / closure / bottle data</li>
+                    </ul>
+                </div>
+
+                <div class="card span-3 soft-top">
+                    <h3>Wine Ref</h3>
+                    <p>Links the canonical wine to outside systems or ingested source data.</p>
+                    <ul>
+                        <li>source name</li>
+                        <li>source id</li>
+                        <li>sku or handle</li>
+                        <li>match status</li>
+                        <li>import metadata</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="relationship-card">
+                <h3>How the core data connects</h3>
+                <p>
+                    These relationships are intentionally simple, so the model stays easy to explain, extend, and
+                    connect.
+                </p>
+                <div class="relationship-notes">
+                    <div>
+                        <strong>Area → Producer</strong>
+                        <p>Geographic home and production context.</p>
+                    </div>
+                    <div>
+                        <strong>Producer → Wine</strong>
+                        <p>A producer publishes their catalog of wines.</p>
+                    </div>
+                    <div>
+                        <strong>Wine → Wine Ref</strong>
+                        <p>A canonical wine can connect to many external records. The core concept around wine identity
+                            and
+                            linking across retailers and producers ensuring consistency and traceability.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </article>
+
+    <article class="sheet">
+        <header class="brand-bar" aria-label="Wine Graph">
+            <img
+                    class="brand-logo"
+                    src="logo/wine_graph_logo_256x256.png"
+                    srcset="logo/wine_graph_logo_128x128.png 128w, logo/wine_graph_logo_256x256.png 256w, logo/wine_graph_logo_512x512.png 512w"
+                    sizes="64px"
+                    width="64"
+                    height="64"
+                    alt="Wine Graph logo"
+            />
+            <div class="brand-copy">
+                <p class="brand-name">Wine Graph</p>
+                <p class="brand-note"></p>
+            </div>
+        </header>
+        <section class="section">
+            <h2>User types and functionality</h2>
+            <div class="sub">
+                This is more product-facing than technical. It shows who the main user types are and what each one does
+                in the system.
+            </div>
+
+            <div class="diagram-grid user-grid">
+                <div class="card span-3 accent-top">
+                    <h3>Visitor / Consumer</h3>
+                    <p>Lightweight discovery user.</p>
+                    <ul>
+                        <li>search wines and producers</li>
+                        <li>browse regions and areas</li>
+                        <li>view retailer availability</li>
+                        <li>save or follow later</li>
+                    </ul>
+                </div>
+
+                <div class="card span-3 accent-top">
+                    <h3>Enthusiast</h3>
+                    <p>More discerning and involved user.</p>
+                    <ul>
+                        <li>save favorite wines, producers, retailers</li>
+                        <li>write personal tasting notes</li>
+                        <li>compare notes with producers and somms</li>
+                        <li>track wine trends</li>
+                        <li>build their own wine profile</li>
+                    </ul>
+                </div>
+
+                <div class="card span-3 accent-top">
+                    <h3>Sommelier</h3>
+                    <p>Wine superuser, taster, expert.</p>
+                    <ul>
+                        <li>search wines and producers</li>
+                        <li>store wines for tracking and analysis</li>
+                        <li>provide somm level tasting notes for canonical wines</li>
+                    </ul>
+                </div>
+
+                <div class="card span-3 accent-top">
+                    <h3>Producer</h3>
+                    <p>Canonical data owner and publisher.</p>
+                    <ul>
+                        <li>create and manage wines</li>
+                        <li>maintain a profile to ensure accuracy and completeness</li>
+                        <li>publish wine catalog</li>
+                        <li>track downstream presence</li>
+                        <li>connect with retailers to improve discoverability and penetrate new markets</li>
+                    </ul>
+                </div>
+
+                <div class="card span-3 gold-top">
+                    <h3>Retailer</h3>
+                    <p>Inventory and discovery operator.</p>
+                    <ul>
+                        <li>connect POS or commerce source</li>
+                        <li>sync inventory</li>
+                        <li>review matches</li>
+                        <li>improve discoverability</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="function-grid">
+                <div class="function-box">
+                    <h4>Simple platform framing</h4>
+                    <ul>
+                        <li>Producers improve the graph by publishing accurate canonical wine data.</li>
+                        <li>Retailers improve the graph by linking real inventory to that canonical data.</li>
+                        <li>Consumers benefit from cleaner discovery and better availability signals.</li>
+                        <li>Sommeliers benefit from more accurate wine quality data and providing expert level tasting
+                            notes and reviews.
+                        </li>
+                        <li>Admin / Operators keep quality high when data is messy or ambiguous.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </article>
+</div>
+</body>
+</html>
